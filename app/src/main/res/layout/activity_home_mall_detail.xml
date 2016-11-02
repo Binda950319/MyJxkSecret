@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.wbh.myjxksecret.activity.HomeMallDetailActivity">
+
+    <!--头部搜索框-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/iv_banner_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/back_icon" />
+
+        <RelativeLayout
+            android:id="@+id/rl_mall_search"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/sercet_search_bg">
+
+            <ImageView
+                android:id="@+id/iv_secret_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/tv_secret_search"
+                android:src="@mipmap/nav_btu_search_normal" />
+
+            <TextView
+                android:id="@+id/tv_secret_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="5dp"
+                android:hint="输入品牌进行搜索" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/mall_scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--头部图片-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:layout_height="200dp">
+
+                <ImageView
+                    android:id="@+id/iv_mall"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/default_drawing" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_alignBottom="@+id/iv_mall"
+                    android:layout_marginBottom="10dp"
+                    android:background="#76464545">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_mallIcon"
+                        android:layout_width="70dp"
+                        app:civ_border_width="3dp"
+                        app:civ_border_color="@color/colorLightGray"
+                        android:layout_height="70dp"
+                        android:src="@mipmap/default_drawing"
+                        android:layout_margin="10dp" />
+
+                    <TextView
+                        android:id="@+id/tv_mallType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_mallIcon"
+                        android:layout_toRightOf="@id/iv_mallIcon"
+                        android:text="老佛爷 • 实体商场"
+                        android:textColor="#fff" />
+
+                    <TextView
+                        android:id="@+id/tv_mallPresetCnt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/tv_mallType"
+                        android:layout_below="@id/tv_mallType"
+                        android:layout_marginTop="5dp"
+                        android:text="385预定"
+                        android:textColor="#fff" />
+
+                    <TextView
+                        android:id="@+id/tv_mallPraiseCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/tv_mallPresetCnt"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/tv_mallPresetCnt"
+                        android:text="2861赞"
+                        android:textColor="#fff" />
+
+                    <TextView
+                        android:id="@+id/tv_mallRecommendedLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/tv_mallType"
+                        android:layout_below="@id/tv_mallPresetCnt"
+                        android:layout_marginTop="6dp"
+                        android:text="推荐星级:4"
+                        android:textColor="#fff" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <!--全部商品+优惠券+实体店-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="6dp"
+                        android:src="@mipmap/destination_btn_goods_normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="全部商品" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="6dp"
+                        android:src="@mipmap/destination_btn_discount_normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="优惠券" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="6dp"
+                        android:src="@mipmap/destination_btn_store_normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="实体店" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--人气单品-->
+            <include
+                layout="@layout/mall_hotgoods_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="全 • 部 • 商 • 品" />
+            <!--全部商品-->
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

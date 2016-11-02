@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_container"
+    android:orientation="vertical"
+    tools:context="com.wbh.myjxksecret.activity.GoodsDetailActivity">
+
+    <!--标头-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/iv_homegoods_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/back_icon" />
+
+        <TextView
+            android:id="@+id/tv_goods_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="商品详情" />
+
+        <ImageView
+            android:id="@+id/iv_homegoods_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/me_share" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorLine" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:orientation="vertical"
+          android:layout_height="match_parent">
+          <!--商品展示-->
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+              <ImageView
+                  android:id="@+id/iv_homegoods_picture"
+                  android:layout_width="match_parent"
+                  android:layout_height="300dp"
+                  android:layout_gravity="center_vertical"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginRight="10dp"></ImageView>
+
+              <TextView
+                  android:id="@+id/tv_homegoods_name"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_vertical"
+                  android:layout_marginTop="10dp"
+                  android:text="Giorgio Armani/阿玛尼 纯净持妆粉底液 05.5 30ML" />
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:id="@+id/tv_homegoods_lowestCountry"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_vertical"
+                      android:layout_marginTop="5dp"
+                      android:text="已知最低价(英国):" />
+
+                  <TextView
+                      android:id="@+id/tv_homegoods_lowestPrice"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_vertical"
+                      android:layout_marginTop="5dp"
+                      android:text="￥323.97"
+                      android:textColor="@color/colorSubName"
+                      android:textSize="18sp" />
+              </LinearLayout>
+
+              <TextView
+                  android:id="@+id/tv_homegoods_sellprice"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_vertical"
+                  android:layout_marginTop="5dp"
+                  android:text="国内参考价: ￥630.00" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="7dp"
+                  android:layout_marginTop="5dp"
+                  android:background="@color/colorWLine" />
+          </LinearLayout>
+
+          <!--商品介绍-->
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="40dp"
+              android:layout_marginLeft="10dp"
+              android:gravity="center_vertical"
+              android:text="商品介绍" />
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:layout_alignParentBottom="true"
+              android:background="@color/colorLine" />
+
+          <LinearLayout
+              android:id="@+id/ll_home_goodsIntro"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"></LinearLayout>
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="7dp"
+              android:layout_marginTop="5dp"
+              android:background="@color/colorWLine" />
+
+          <!--商品评价-->
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="40dp"
+              android:layout_marginLeft="10dp"
+              android:gravity="center_vertical"
+              android:text="暂无评价" />
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:layout_alignParentBottom="true"
+              android:background="@color/colorLine" />
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="40dp"
+              android:layout_marginLeft="10dp"
+              android:gravity="center"
+              android:text="去评论 》" />
+      </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@mipmap/globalshow_btn_detail_comment2x" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/ll_home_collect"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_home_collect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@mipmap/me_like" />
+
+                <TextView
+                    android:id="@+id/tv_home_collect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="收藏" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_addShoppingCar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@android:color/black">
+
+                <TextView
+                    android:id="@+id/tv_add_shoppingcar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="加入旅行便笺"
+                    android:textColor="@color/colorWhite" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

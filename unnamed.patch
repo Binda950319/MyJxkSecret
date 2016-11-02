@@ -1,0 +1,332 @@
+Index: import-summary.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- import-summary.txt	(revision )
++++ import-summary.txt	(revision )
+@@ -0,0 +1,65 @@
++ECLIPSE ANDROID PROJECT IMPORT SUMMARY
++======================================
++
++Ignored Files:
++--------------
++The following files were *not* copied into the new Gradle project; you
++should evaluate whether these are still needed in your project and if
++so manually move them:
++
++* .gitignore
++* LICENSE
++* README.md
++* pom.xml
++* proguard-project.txt
++
++Replaced Jars with Dependencies:
++--------------------------------
++The importer recognized the following .jar files as third party
++libraries and replaced them with Gradle dependencies instead. This has
++the advantage that more explicit version information is known, and the
++libraries can be updated automatically. However, it is possible that
++the .jar file in your project was of an older version than the
++dependency we picked, which could render the project not compileable.
++You can disable the jar replacement in the import wizard and try again:
++
++android-support-v4.jar => com.android.support:support-v4:23.+
++
++Moved Files:
++------------
++Android Gradle projects use a different directory structure than ADT
++Eclipse projects. Here's how the projects were restructured:
++
++* AndroidManifest.xml => androidautoscrollviewpager\src\main\AndroidManifest.xml
++* assets\ => androidautoscrollviewpager\src\main\assets
++* res\ => androidautoscrollviewpager\src\main\res
++* src\ => androidautoscrollviewpager\src\main\java\
++
++Missing Android Support Repository:
++-----------------------------------
++Some useful libraries, such as the Android Support Library, are
++installed from a special Maven repository, which should be installed
++via the SDK manager.
++
++It looks like this library is missing from your SDK installation at:
++null
++
++To install it, open the SDK manager, and in the Extras category,
++select "Android Support Repository". You may also want to install the
++"Google Repository" if you want to use libraries like Google Play
++Services.
++
++Next Steps:
++-----------
++You can now build the project. The Gradle project needs network
++connectivity to download dependencies.
++
++Bugs:
++-----
++If for some reason your project does not build, and you determine that
++it is due to a bug or limitation of the Eclipse to Gradle importer,
++please file a bug at http://b.android.com with category
++Component-Tools.
++
++(This import summary is for your information only, and can be deleted
++after import once you are satisfied with the results.)
+Index: app/app.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/app.iml	(revision 3)
++++ app/app.iml	(revision )
+@@ -28,12 +28,15 @@
+     <output-test url="file://$MODULE_DIR$/build/intermediates/classes/test/debug" />
+     <exclude-output />
+     <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/debug" isTestSource="false" generated="true" />
+       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/debug" isTestSource="false" generated="true" />
+       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/debug" isTestSource="false" generated="true" />
+       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
+       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/debug" isTestSource="false" generated="true" />
+       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/debug" type="java-resource" />
+       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/debug" type="java-resource" />
++      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/test/debug" isTestSource="true" generated="true" />
++      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/debug" isTestSource="true" generated="true" />
+       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/debug" isTestSource="true" generated="true" />
+       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/debug" isTestSource="true" generated="true" />
+       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/debug" isTestSource="true" generated="true" />
+@@ -64,14 +67,6 @@
+       <sourceFolder url="file://$MODULE_DIR$/src/main/jni" isTestSource="false" />
+       <sourceFolder url="file://$MODULE_DIR$/src/main/rs" isTestSource="false" />
+       <sourceFolder url="file://$MODULE_DIR$/src/main/shaders" isTestSource="false" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/test/res" type="java-test-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/test/assets" type="java-test-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/test/aidl" isTestSource="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/test/jni" isTestSource="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
+       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/res" type="java-test-resource" />
+       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/resources" type="java-test-resource" />
+       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/assets" type="java-test-resource" />
+@@ -80,11 +75,24 @@
+       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/jni" isTestSource="true" />
+       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
+       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/shaders" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/src/test/res" type="java-test-resource" />
++      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
++      <sourceFolder url="file://$MODULE_DIR$/src/test/assets" type="java-test-resource" />
++      <sourceFolder url="file://$MODULE_DIR$/src/test/aidl" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/src/test/jni" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/bundles" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dependency-cache" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-core/2.2.2/jars" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-idling-resource/2.2.2/jars" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support.test/exposed-instrumentation-api-publish/0.5/jars" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/jars" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/jars" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars" />
+@@ -96,6 +104,8 @@
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.4.0/jars" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/2.1.0/jars" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-safeguard" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-support" />
+@@ -110,21 +120,43 @@
+       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
+       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
+     </content>
+-    <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
++    <orderEntry type="jdk" jdkName="Android API 23 Platform (1)" jdkType="Android SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+     <orderEntry type="library" exported="" name="support-v4-24.2.1" level="project" />
+     <orderEntry type="library" exported="" name="support-compat-24.2.1" level="project" />
+-    <orderEntry type="library" exported="" name="support-media-compat-24.2.1" level="project" />
+     <orderEntry type="library" exported="" name="animated-vector-drawable-24.2.1" level="project" />
++    <orderEntry type="library" exported="" name="okio-1.8.0" level="project" />
+     <orderEntry type="library" exported="" name="support-fragment-24.2.1" level="project" />
++    <orderEntry type="library" exported="" scope="TEST" name="runner-0.5" level="project" />
++    <orderEntry type="library" exported="" scope="TEST" name="espresso-idling-resource-2.2.2" level="project" />
++    <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
++    <orderEntry type="library" exported="" scope="TEST" name="hamcrest-library-1.3" level="project" />
++    <orderEntry type="library" exported="" scope="TEST" name="hamcrest-integration-1.3" level="project" />
++    <orderEntry type="library" exported="" scope="TEST" name="jsr305-2.0.1" level="project" />
++    <orderEntry type="library" exported="" name="design-24.2.1" level="project" />
++    <orderEntry type="library" exported="" name="support-media-compat-24.2.1" level="project" />
++    <orderEntry type="library" exported="" scope="TEST" name="espresso-core-2.2.2" level="project" />
++    <orderEntry type="library" exported="" scope="TEST" name="exposed-instrumentation-api-publish-0.5" level="project" />
+     <orderEntry type="library" exported="" name="support-core-ui-24.2.1" level="project" />
+     <orderEntry type="library" exported="" name="recyclerview-v7-24.2.1" level="project" />
++    <orderEntry type="library" exported="" scope="TEST" name="rules-0.5" level="project" />
+     <orderEntry type="library" exported="" name="appcompat-v7-24.2.1" level="project" />
+     <orderEntry type="library" exported="" name="support-vector-drawable-24.2.1" level="project" />
++    <orderEntry type="library" exported="" scope="TEST" name="javax.annotation-api-1.2" level="project" />
+     <orderEntry type="library" exported="" name="support-core-utils-24.2.1" level="project" />
++    <orderEntry type="library" exported="" scope="TEST" name="javax.inject-1" level="project" />
++    <orderEntry type="library" exported="" name="retrofit-2.1.0" level="project" />
++    <orderEntry type="library" exported="" name="gson-2.7" level="project" />
++    <orderEntry type="library" exported="" name="converter-gson-2.1.0" level="project" />
++    <orderEntry type="library" exported="" name="circleimageview-2.1.0" level="project" />
+     <orderEntry type="library" exported="" name="support-annotations-24.2.1" level="project" />
++    <orderEntry type="library" exported="" scope="TEST" name="javawriter-2.1.1" level="project" />
+     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-core-1.3" level="project" />
++    <orderEntry type="library" exported="" name="okhttp-3.3.0" level="project" />
+     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
+-    <orderEntry type="library" exported="" name="design-24.2.1" level="project" />
++    <orderEntry type="library" exported="" name="butterknife-annotations-8.4.0" level="project" />
++    <orderEntry type="library" exported="" name="butterknife-8.4.0" level="project" />
++    <orderEntry type="module" module-name="androidautoscrollviewpager" exported="" />
++    <orderEntry type="module" module-name="pullToRefresh_Library" exported="" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(revision 9)
++++ app/src/main/res/values/strings.xml	(revision )
+@@ -1,3 +1,6 @@
+ <resources>
+     <string name="app_name">MyJxkSecret</string>
++
++    <!-- TODO: Remove or change this placeholder text -->
++    <string name="hello_blank_fragment">Hello blank fragment</string>
+ </resources>
+Index: app/src/main/res/values/styles.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/styles.xml	(revision 9)
++++ app/src/main/res/values/styles.xml	(revision )
+@@ -1,7 +1,7 @@
+ <resources>
+ 
+     <!-- Base application theme. -->
+-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
++    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+         <!-- Customize your theme here. -->
+         <item name="colorPrimary">@color/colorPrimary</item>
+         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+Index: MyJxkSecret.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- MyJxkSecret.iml	(revision 3)
++++ MyJxkSecret.iml	(revision )
+@@ -13,7 +13,7 @@
+     <content url="file://$MODULE_DIR$">
+       <excludeFolder url="file://$MODULE_DIR$/.gradle" />
+     </content>
+-    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
++    <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision 3)
++++ app/build.gradle	(revision )
+@@ -1,5 +1,6 @@
+ apply plugin: 'com.android.application'
+-
++//butterKnife插件的应用
++apply plugin: 'android-apt'
+ android {
+     compileSdkVersion 23
+     buildToolsVersion "23.0.3"
+@@ -10,6 +11,7 @@
+         targetSdkVersion 23
+         versionCode 1
+         versionName "1.0"
++        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+     }
+     buildTypes {
+         release {
+@@ -21,7 +23,19 @@
+ 
+ dependencies {
+     compile fileTree(include: ['*.jar'], dir: 'libs')
++    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
++        exclude group: 'com.android.support', module: 'support-annotations'
++    })
+     testCompile 'junit:junit:4.12'
++    apt 'com.jakewharton:butterknife-compiler:8.4.0'
++    compile project(':androidautoscrollviewpager')
+     compile 'com.android.support:appcompat-v7:23.4.0'
+     compile 'com.android.support:design:24.2.1'
++    compile 'com.squareup.retrofit2:retrofit:2.1.0'
++    compile 'com.squareup.picasso:picasso:2.5.2'
++    compile 'com.jakewharton:butterknife:8.4.0'
++    compile 'de.hdodenhof:circleimageview:2.1.0'
++    compile 'com.android.support:support-v4:23.4.0'
++    compile project(':pullToRefresh_Library')
++    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+ }
+Index: app/src/main/java/com/wbh/myjxksecret/MainActivity.java
+===================================================================
+--- app/src/main/java/com/wbh/myjxksecret/MainActivity.java	(revision 9)
++++ app/src/main/java/com/wbh/myjxksecret/MainActivity.java	(revision 9)
+@@ -1,13 +0,0 @@
+-package com.wbh.myjxksecret;
+-
+-import android.support.v7.app.AppCompatActivity;
+-import android.os.Bundle;
+-
+-public class MainActivity extends AppCompatActivity {
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_main);
+-    }
+-}
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- build.gradle	(revision 3)
++++ build.gradle	(revision )
+@@ -3,10 +3,11 @@
+ buildscript {
+     repositories {
+         jcenter()
++        mavenCentral()
+     }
+     dependencies {
+         classpath 'com.android.tools.build:gradle:2.1.3'
+-
++        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+         // NOTE: Do not place your application dependencies here; they belong
+         // in the individual module build.gradle files
+     }
+Index: settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- settings.gradle	(revision 3)
++++ settings.gradle	(revision )
+@@ -1,1 +1,2 @@
+-include ':app'
++include ':app', ':pullToRefresh_Library'
++include ':androidautoscrollviewpager'

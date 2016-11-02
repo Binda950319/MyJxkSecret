@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:padding="2dp">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        android:background="@mipmap/plugin_camera_no_pictures"
+        android:id="@+id/bourn_item_store_iv" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#7b000000"
+        android:layout_alignBottom="@+id/bourn_item_store_iv"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="测试"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:id="@+id/bourn_item_store_title"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="测试"
+            android:textColor="@android:color/white"
+            android:id="@+id/bourn_item_store_show"
+            android:layout_below="@+id/bourn_item_store_assist"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bourn_store_select"
+            android:id="@+id/bourn_item_store_assist"
+            android:layout_alignBottom="@+id/bourn_item_store_title"
+            android:layout_alignRight="@+id/bourn_item_store_moods"
+            android:layout_alignEnd="@+id/bourn_item_store_moods" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="人气"
+            android:textColor="@android:color/white"
+            android:id="@+id/bourn_item_store_moods"
+            android:layout_alignTop="@+id/bourn_item_store_show"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="24dp"
+            android:layout_marginEnd="24dp" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

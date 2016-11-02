@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include layout="@layout/layout_brand_hot"
+                android:id="@+id/brand_hot_ch"></include>
+            <com.wbh.myjxksecret.utils.MyGridView
+                android:id="@+id/global_classify_gridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="2"
+                android:layout_below="@+id/brand_hot_ch"
+                >
+
+            </com.wbh.myjxksecret.utils.MyGridView>
+            <com.wbh.myjxksecret.utils.MyExpandView
+                android:id="@+id/global_classify_expandListView"
+                android:layout_below="@+id/global_classify_gridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.wbh.myjxksecret.utils.MyExpandView>
+            <!--右侧选择大洲的选择View-->
+
+        </RelativeLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+    <com.wbh.myjxksecret.utils.AbcdView
+        android:id="@+id/abcd"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wbh.myjxksecret.activity.BoursChiceActivity">
+
+
+    <include layout="@layout/choive_layout_header"
+        android:id="@+id/choice_header" />
+    <View
+        android:id="@+id/divder"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#68000000"
+        android:layout_below="@+id/choice_header"/>
+    <ExpandableListView
+        android:id="@+id/chice_exlisetview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/divder"
+        >
+    </ExpandableListView>
+    <!--右侧选择大洲的选择View-->
+    <com.wbh.myjxksecret.utils.ControyView
+        android:id="@+id/hehe"
+        android:layout_width="40dp"
+        android:layout_height="220dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

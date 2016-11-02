@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWLine">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWLine"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+        <include
+            layout="@layout/activity_home_mall_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed" />
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <!--不动的部分, 不设置滚动标记, 之前的都设置滚动标记-->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_mallCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWLine"></android.support.v7.widget.Toolbar>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabL_mall_category"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorWhite"
+                app:tabIndicatorColor="@color/colorBlue_checked"
+                app:tabSelectedTextColor="@color/colorBlue_checked"
+                app:tabTextColor="@android:color/black"
+                android:fillViewport="false" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <!--设置滚动行为-->
+    <com.handmark.pulltorefresh.library.PullToRefreshGridView
+        android:id="@+id/gv_mallCategoryGoods"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:horizontalSpacing="5dp"
+        android:numColumns="2"
+        android:verticalSpacing="5dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"></com.handmark.pulltorefresh.library.PullToRefreshGridView>
+
+</android.support.design.widget.CoordinatorLayout>
